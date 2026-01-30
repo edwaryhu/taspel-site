@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CG0800S | Premium Urban E-Bike | TENWAYS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="product-cgo800s-styles.css">
+</head>
+<body>
+  <!-- Toast Notification -->
+  <div id="toast" class="toast">
+    <svg class="toast-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M20 6L9 17l-5-5"/>
+    </svg>
+    <span>Added to cart</span>
+  </div>
+
+  <!-- Mini Cart Drawer -->
+  <div id="miniCartOverlay" class="mini-cart-overlay"></div>
+  <aside id="miniCart" class="mini-cart">
+    <div class="mini-cart-header">
+      <h3>Your Cart <span id="cartCount">(1)</span></h3>
+      <button class="mini-cart-close" onclick="closeMiniCart()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 6L6 18M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+    <div class="mini-cart-items">
+      <div class="mini-cart-item">
+        <img src="https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=100&h=100&fit=crop" alt="CG0800S">
+        <div class="mini-cart-item-info">
+          <h4>CG0800S Urban E-Bike</h4>
+          <p>Midnight Black / Medium</p>
+          <span class="mini-cart-item-price">$1,899</span>
+        </div>
+        <button class="mini-cart-item-remove">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="mini-cart-footer">
+      <div class="mini-cart-subtotal">
+        <span>Subtotal</span>
+        <span id="cartSubtotal">$1,899</span>
+      </div>
+      <button class="btn-checkout">Checkout</button>
+      <button class="btn-view-cart">View Cart</button>
+    </div>
+  </aside>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox">
+    <button class="lightbox-close" onclick="closeLightbox()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M18 6L6 18M6 6l12 12"/>
+      </svg>
+    </button>
+    <button class="lightbox-nav lightbox-prev" onclick="lightboxNav(-1)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M15 18l-6-6 6-6"/>
+      </svg>
+    </button>
+    <img id="lightboxImg" src="" alt="Product image">
+    <button class="lightbox-nav lightbox-next" onclick="lightboxNav(1)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M9 18l6-6-6-6"/>
+      </svg>
+    </button>
+    <div class="lightbox-counter"><span id="lightboxCurrent">1</span> / <span id="lightboxTotal">5</span></div>
+  </div>
+
+  <!-- Video Modal -->
+  <div id="videoModal" class="video-modal">
+    <button class="video-modal-close" onclick="closeVideoModal()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M18 6L6 18M6 6l12 12"/>
+      </svg>
+    </button>
+    <div class="video-modal-content">
+      <div class="video-placeholder">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M8 5v14l11-7z"/>
+        </svg>
+        <p>Video Player</p>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- ========== SECTION 1: PRODUCT HERO ========== -->
+    <section class="product-hero">
+      <div class="hero-container">
+        <!-- Gallery Column -->
+        <div class="gallery-column">
+          <div class="main-image-wrapper">
+            <div class="main-image-container" onclick="openLightbox(0)">
+              <img id="mainImage" src="https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=800&h=600&fit=crop" alt="CG0800S Electric Bike">
+              <div class="zoom-hint">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"/>
+                  <path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="thumbnail-row">
+            <button class="thumbnail active" data-index="0" data-src="https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=800&h=600&fit=crop">
+              <img src="https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=100&h=75&fit=crop" alt="View 1">
+            </button>
+            <button class="thumbnail" data-index="1" data-src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop">
+              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=100&h=75&fit=crop" alt="View 2">
+            </button>
+            <button class="thumbnail" data-index="2" data-src="https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=800&h=600&fit=crop">
+              <img src="https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=100&h=75&fit=crop" alt="View 3">
+            </button>
+            <button class="thumbnail" data-index="3" data-src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=800&h=600&fit=crop">
+              <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=100&h=75&fit=crop" alt="View 4">
+            </button>
+            <button class="thumbnail" data-index="4" data-src="https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?w=800&h=600&fit=crop">
+              <img src="https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?w=100&h=75&fit=crop" alt="View 5">
+            </button>
+          </div>
+
+          <div class="spec-icons-row">
+            <div class="spec-item">
+              <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 6v6l4 2"/>
+              </svg>
+              <div class="spec-text">
+                <span class="spec-value">70 mi</span>
+                <span class="spec-label">Range</span>
+              </div>
+            </div>
+            <div class="spec-item">
+              <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+              </svg>
+              <div class="spec-text">
+                <span class="spec-value">20 mph</span>
+                <span class="spec-label">Top Speed</span>
+              </div>
+            </div>
+            <div class="spec-item">
+              <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+              </svg>
+              <div class="spec-text">
+                <span class="spec-value">350W</span>
+                <span class="spec-label">Motor</span>
+              </div>
+            </div>
+            <div class="spec-item">
+              <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 3v18M5.5 8.5l13-5M5.5 15.5l13 5"/>
+              </svg>
+              <div class="spec-text">
+                <span class="spec-value">37 lbs</span>
+                <span class="spec-label">Weight</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Buy Box Column -->
+        <div class="buybox-column">
+          <div class="buybox-sticky">
+            <h1 class="product-title">CG0800S</h1>
+            <p class="product-subtitle">Urban Electric Bike</p>
+
+            <div class="rating-row">
+              <div class="stars">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" class="star-half"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <a href="#reviews" class="review-count">4.7 (238 reviews)</a>
+            </div>
+
+            <div class="price-block">
+              <span class="price-current">$1,899</span>
+              <span class="price-compare">$2,199</span>
+              <span class="price-badge">Save $300</span>
+            </div>
+
+            <div class="variant-section">
+              <div class="variant-group">
+                <label class="variant-label">Color: <span id="selectedColor">Midnight Black</span></label>
+                <div class="color-swatches">
+                  <button class="color-swatch active" data-color="Midnight Black" style="background: #1a1a1a;" title="Midnight Black"></button>
+                  <button class="color-swatch" data-color="Arctic White" style="background: #f5f5f5;" title="Arctic White"></button>
+                  <button class="color-swatch" data-color="Forest Green" style="background: #2d4a3e;" title="Forest Green"></button>
+                  <button class="color-swatch" data-color="Copper Bronze" style="background: #b87333;" title="Copper Bronze"></button>
+                </div>
+              </div>
+
+              <div class="variant-group">
+                <label class="variant-label">Size: <span id="selectedSize">Medium</span></label>
+                <div class="size-pills">
+                  <button class="size-pill" data-size="Small">S</button>
+                  <button class="size-pill active" data-size="Medium">M</button>
+                  <button class="size-pill" data-size="Large">L</button>
+                  <button class="size-pill" data-size="X-Large">XL</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="accessories-module">
+              <button class="accessories-toggle" onclick="toggleAccessories()">
+                <span>Complete Your Ride</span>
+                <svg class="accessories-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M6 9l6 6 6-6"/>
+                </svg>
+              </button>
+              <div class="accessories-content" id="accessoriesContent">
+                <label class="accessory-item">
+                  <input type="checkbox" class="accessory-check" data-price="89" onchange="updateTotal()">
+                  <span class="accessory-name">Premium Helmet</span>
+                  <span class="accessory-price">+$89</span>
+                </label>
+                <label class="accessory-item">
+                  <input type="checkbox" class="accessory-check" data-price="49" onchange="updateTotal()">
+                  <span class="accessory-name">Phone Mount</span>
+                  <span class="accessory-price">+$49</span>
+                </label>
+                <label class="accessory-item">
+                  <input type="checkbox" class="accessory-check" data-price="129" onchange="updateTotal()">
+                  <span class="accessory-name">Rear Rack & Bag</span>
+                  <span class="accessory-price">+$129</span>
+                </label>
+                <label class="accessory-item">
+                  <input type="checkbox" class="accessory-check" data-price="59" onchange="updateTotal()">
+                  <span class="accessory-name">LED Light Set</span>
+                  <span class="accessory-price">+$59</span>
+                </label>
+                <label class="accessory-item">
+                  <input type="checkbox" class="accessory-check" data-price="39" onchange="updateTotal()">
+                  <span class="accessory-name">Bike Lock</span>
+                  <span class="accessory-price">+$39</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="total-line" id="totalLine">
+              <span>Total</span>
+              <span id="totalPrice">$1,899</span>
+            </div>
+
+            <button class="btn-add-to-cart" id="addToCartBtn" onclick="addToCart()">
+              <span class="btn-text">Add to Cart</span>
+              <span class="btn-spinner"></span>
+            </button>
+
+            <button class="btn-find-store">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              Find a Store
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SECTION 2: RIDER REVIEWS + TABS ========== -->
+    <section class="rider-reviews-section">
+      <div class="section-container">
+        <h2 class="section-title">Rider Reviews</h2>
+
+        <div class="tabs-nav">
+          <button class="tab-btn active" data-tab="reviews">Reviews</button>
+          <button class="tab-btn" data-tab="community">Community</button>
+          <button class="tab-btn" data-tab="faq">FAQ</button>
+        </div>
+
+        <div class="tabs-content">
+          <div class="tab-panel active" id="tab-reviews">
+            <div class="video-carousel-wrapper">
+              <button class="carousel-arrow carousel-prev" onclick="slideVideoCarousel(-1)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M15 18l-6-6 6-6"/>
+                </svg>
+              </button>
+
+              <div class="video-carousel" id="videoCarousel">
+                <div class="video-card" onclick="openVideoModal()">
+                  <div class="video-thumb">
+                    <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?w=300&h=200&fit=crop" alt="Review 1">
+                    <div class="play-overlay">
+                      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                  </div>
+                  <div class="video-info">
+                    <h4>My Daily Commute Changed</h4>
+                    <div class="video-meta">
+                      <span class="video-source">YouTube</span>
+                      <span class="video-date">Jan 15, 2026</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="video-card" onclick="openVideoModal()">
+                  <div class="video-thumb">
+                    <img src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?w=300&h=200&fit=crop" alt="Review 2">
+                    <div class="play-overlay">
+                      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                  </div>
+                  <div class="video-info">
+                    <h4>1000 Miles Review</h4>
+                    <div class="video-meta">
+                      <span class="video-source">Vimeo</span>
+                      <span class="video-date">Dec 28, 2025</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="video-card" onclick="openVideoModal()">
+                  <div class="video-thumb">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=200&fit=crop" alt="Review 3">
+                    <div class="play-overlay">
+                      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                  </div>
+                  <div class="video-info">
+                    <h4>Best Urban E-Bike 2025</h4>
+                    <div class="video-meta">
+                      <span class="video-source">YouTube</span>
+                      <span class="video-date">Nov 10, 2025</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="video-card" onclick="openVideoModal()">
+                  <div class="video-thumb">
+                    <img src="https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=300&h=200&fit=crop" alt="Review 4">
+                    <div class="play-overlay">
+                      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                  </div>
+                  <div class="video-info">
+                    <h4>CG0800S vs Competition</h4>
+                    <div class="video-meta">
+                      <span class="video-source">YouTube</span>
+                      <span class="video-date">Oct 22, 2025</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="video-card" onclick="openVideoModal()">
+                  <div class="video-thumb">
+                    <img src="https://images.unsplash.com/photo-1505705694340-019e1e335916?w=300&h=200&fit=crop" alt="Review 5">
+                    <div class="play-overlay">
+                      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                  </div>
+                  <div class="video-info">
+                    <h4>Weekend Adventure Ride</h4>
+                    <div class="video-meta">
+                      <span class="video-source">TikTok</span>
+                      <span class="video-date">Oct 5, 2025</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <button class="carousel-arrow carousel-next" onclick="slideVideoCarousel(1)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 18l6-6-6-6"/>
+                </svg>
+              </button>
+            </div>
+
+            <div class="carousel-dots" id="videoDots">
+              <button class="dot active"></button>
+              <button class="dot"></button>
+              <button class="dot"></button>
+            </div>
+          </div>
+
+          <div class="tab-panel" id="tab-community">
+            <div class="community-content">
+              <p class="community-intro">Join our community of 50,000+ riders sharing tips, routes, and adventures.</p>
+              <div class="community-stats">
+                <div class="stat"><span class="stat-num">50K+</span><span class="stat-label">Members</span></div>
+                <div class="stat"><span class="stat-num">12K</span><span class="stat-label">Routes Shared</span></div>
+                <div class="stat"><span class="stat-num">890</span><span class="stat-label">Local Groups</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-panel" id="tab-faq">
+            <div class="faq-list">
+              <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                  <span>What is the warranty coverage?</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div class="faq-answer"><p>The CG0800S comes with a 2-year comprehensive warranty covering the frame, motor, and battery. Extended warranty options are available at checkout.</p></div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                  <span>How long does the battery last?</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div class="faq-answer"><p>The 36V 10.5Ah battery provides up to 70 miles of range on a single charge, depending on terrain and assist level. Full charge takes approximately 4 hours.</p></div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                  <span>Is assembly required?</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div class="faq-answer"><p>The bike arrives 90% assembled. You'll need to attach the handlebars, pedals, and front wheel - typically a 15-minute process with the included tools and video guide.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SECTION 3: FIT TOOL ========== -->
+    <section class="fit-tool-section">
+      <div class="section-container">
+        <div class="fit-tool-grid">
+          <div class="fit-tool-content">
+            <h2 class="section-title">Let's Get You Fit</h2>
+            <p class="fit-intro">Enter your height to find your perfect frame size. Our smart sizing ensures optimal comfort and performance on every ride.</p>
+
+            <div class="height-input-group">
+              <div class="unit-toggle">
+                <button class="unit-btn active" data-unit="imperial" onclick="switchUnit('imperial')">ft/in</button>
+                <button class="unit-btn" data-unit="metric" onclick="switchUnit('metric')">cm</button>
+              </div>
+
+              <div class="height-display" id="heightDisplay">
+                <span class="height-value" id="heightValue">5'9"</span>
+              </div>
+
+              <div class="slider-container">
+                <input type="range" id="heightSlider" min="150" max="200" value="175" class="height-slider" oninput="updateHeight(this.value)">
+                <div class="slider-labels">
+                  <span>4'11"</span>
+                  <span>6'7"</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="size-recommendation">
+              <div class="size-bar">
+                <div class="size-segment" data-size="XS">XS</div>
+                <div class="size-segment" data-size="S">S</div>
+                <div class="size-segment active" data-size="M">M</div>
+                <div class="size-segment" data-size="L">L</div>
+              </div>
+              <p class="size-note">Based on your height, we recommend size <strong id="recommendedSize">Medium</strong></p>
+            </div>
+          </div>
+
+          <div class="fit-tool-visual">
+            <div class="bike-silhouette">
+              <svg viewBox="0 0 400 250" class="bike-svg">
+                <!-- Simplified bike outline -->
+                <ellipse cx="80" cy="180" rx="50" ry="50" fill="none" stroke="currentColor" stroke-width="2"/>
+                <ellipse cx="320" cy="180" rx="50" ry="50" fill="none" stroke="currentColor" stroke-width="2"/>
+                <path d="M80 180 L160 100 L200 180 L320 180" fill="none" stroke="currentColor" stroke-width="3"/>
+                <path d="M160 100 L180 60 L200 60" fill="none" stroke="currentColor" stroke-width="3"/>
+                <path d="M160 100 L200 180" fill="none" stroke="currentColor" stroke-width="3"/>
+                <path d="M200 180 L240 100 L320 180" fill="none" stroke="currentColor" stroke-width="2"/>
+                <circle cx="200" cy="180" r="15" fill="none" stroke="currentColor" stroke-width="2"/>
+                <!-- Pedals -->
+                <line x1="185" y1="190" x2="215" y2="170" stroke="currentColor" stroke-width="3"/>
+              </svg>
+              <div class="best-fit-tag" id="bestFitTag">
+                <span>Best for you</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SECTION 4: FEATURE DETAIL CARDS ========== -->
+    <section class="features-section">
+      <div class="section-container">
+        <div class="features-header">
+          <h2 class="section-title">CG0800S</h2>
+          <p class="features-intro">Engineered for the modern urban rider. Every component is carefully selected to deliver a seamless, maintenance-free riding experience.</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-image">
+              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop" alt="Belt Drive">
+            </div>
+            <div class="feature-content">
+              <h3>Gates Carbon Belt Drive</h3>
+              <p>Silent, grease-free, and built to last 30,000+ miles. No more chain maintenance or oily pants.</p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-image">
+              <img src="https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=400&h=300&fit=crop" alt="Single Speed">
+            </div>
+            <div class="feature-content">
+              <h3>Optimized Single Speed</h3>
+              <p>Paired with torque-sensing assist, one gear is all you need. Simplified mechanics, amplified reliability.</p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-image">
+              <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=300&fit=crop" alt="Hydraulic Brakes">
+            </div>
+            <div class="feature-content">
+              <h3>Hydraulic Disc Brakes</h3>
+              <p>Tektro hydraulic brakes deliver confident stopping power in any weather. Self-adjusting for consistent performance.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="features-dots" id="featuresDots">
+          <button class="dot active"></button>
+          <button class="dot"></button>
+          <button class="dot"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SECTION 5: BRAND VIDEO STRIP ========== -->
+    <section class="video-strip-section">
+      <div class="video-strip" id="brandVideo">
+        <video id="brandVideoPlayer" muted loop playsinline poster="https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?w=1920&h=600&fit=crop">
+          <source src="" type="video/mp4">
+        </video>
+        <div class="video-poster" style="background-image: url('https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?w=1920&h=600&fit=crop')"></div>
+        <div class="video-controls">
+          <button class="video-control-btn" id="playPauseBtn" onclick="toggleBrandVideo()">
+            <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>
+          </button>
+          <button class="video-control-btn" id="muteBtn" onclick="toggleMute()">
+            <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5zM23 9l-6 6M17 9l6 6"/></svg>
+            <svg class="icon-unmuted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5zM19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg>
+          </button>
+        </div>
+        <div class="video-watermark">TENWAYS</div>
+      </div>
+    </section>
+
+    <!-- ========== SECTION 6: LIFESTYLE GRID ========== -->
+    <section class="lifestyle-section">
+      <div class="section-container">
+        <div class="lifestyle-grid">
+          <div class="lifestyle-item" onclick="openLifestyleLightbox(0)">
+            <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?w=500&h=500&fit=crop" alt="Lifestyle 1">
+          </div>
+          <div class="lifestyle-item" onclick="openLifestyleLightbox(1)">
+            <img src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?w=500&h=500&fit=crop" alt="Lifestyle 2">
+          </div>
+          <div class="lifestyle-item" onclick="openLifestyleLightbox(2)">
+            <img src="https://images.unsplash.com/photo-1505705694340-019e1e335916?w=500&h=500&fit=crop" alt="Lifestyle 3">
+          </div>
+          <div class="lifestyle-item" onclick="openLifestyleLightbox(3)">
+            <img src="https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=500&h=500&fit=crop" alt="Lifestyle 4">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SECTION 7: RECOMMENDED PRODUCTS ========== -->
+    <section class="recommended-section">
+      <div class="section-container">
+        <h2 class="section-title">Recommended For You</h2>
+
+        <div class="product-carousel-wrapper">
+          <button class="carousel-arrow carousel-prev" onclick="slideProductCarousel(-1)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+
+          <div class="product-carousel" id="productCarousel">
+            <div class="product-card">
+              <div class="product-card-image">
+                <img src="https://images.unsplash.com/photo-1557803175-2f8c4f4c6f8f?w=250&h=250&fit=crop" alt="Helmet">
+                <button class="quick-add">Quick Add</button>
+              </div>
+              <div class="product-card-info">
+                <h4>Urban Shield Helmet</h4>
+                <div class="product-card-rating">
+                  <div class="mini-stars">★★★★★</div>
+                  <span>(124)</span>
+                </div>
+                <span class="product-card-price">$89</span>
+              </div>
+            </div>
+
+            <div class="product-card">
+              <div class="product-card-image">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=250&h=250&fit=crop" alt="Lock">
+                <button class="quick-add">Quick Add</button>
+              </div>
+              <div class="product-card-info">
+                <h4>SecureGrip U-Lock</h4>
+                <div class="product-card-rating">
+                  <div class="mini-stars">★★★★☆</div>
+                  <span>(89)</span>
+                </div>
+                <span class="product-card-price">$39</span>
+              </div>
+            </div>
+
+            <div class="product-card">
+              <div class="product-card-image">
+                <img src="https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=250&h=250&fit=crop" alt="Lights">
+                <button class="quick-add">Quick Add</button>
+              </div>
+              <div class="product-card-info">
+                <h4>LED Light Set Pro</h4>
+                <div class="product-card-rating">
+                  <div class="mini-stars">★★★★★</div>
+                  <span>(201)</span>
+                </div>
+                <span class="product-card-price">$59</span>
+              </div>
+            </div>
+
+            <div class="product-card">
+              <div class="product-card-image">
+                <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=250&h=250&fit=crop" alt="Rack">
+                <button class="quick-add">Quick Add</button>
+              </div>
+              <div class="product-card-info">
+                <h4>Cargo Rear Rack</h4>
+                <div class="product-card-rating">
+                  <div class="mini-stars">★★★★☆</div>
+                  <span>(67)</span>
+                </div>
+                <span class="product-card-price">$79</span>
+              </div>
+            </div>
+
+            <div class="product-card">
+              <div class="product-card-image">
+                <img src="https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?w=250&h=250&fit=crop" alt="Bag">
+                <button class="quick-add">Quick Add</button>
+              </div>
+              <div class="product-card-info">
+                <h4>Waterproof Pannier</h4>
+                <div class="product-card-rating">
+                  <div class="mini-stars">★★★★★</div>
+                  <span>(156)</span>
+                </div>
+                <span class="product-card-price">$49</span>
+              </div>
+            </div>
+
+            <div class="product-card">
+              <div class="product-card-image">
+                <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?w=250&h=250&fit=crop" alt="Phone Mount">
+                <button class="quick-add">Quick Add</button>
+              </div>
+              <div class="product-card-info">
+                <h4>QuickMount Phone Holder</h4>
+                <div class="product-card-rating">
+                  <div class="mini-stars">★★★★★</div>
+                  <span>(312)</span>
+                </div>
+                <span class="product-card-price">$49</span>
+              </div>
+            </div>
+          </div>
+
+          <button class="carousel-arrow carousel-next" onclick="slideProductCarousel(1)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SECTION 8: REVIEWS SECTION ========== -->
+    <section class="reviews-section" id="reviews">
+      <div class="section-container">
+        <h2 class="section-title">What People Are Saying</h2>
+
+        <div class="reviews-layout">
+          <div class="reviews-summary">
+            <div class="rating-big">
+              <span class="rating-number">4.7</span>
+              <div class="rating-stars">★★★★★</div>
+              <span class="rating-total">Based on 238 reviews</span>
+            </div>
+
+            <div class="rating-bars">
+              <div class="rating-bar-row">
+                <span>5 ★</span>
+                <div class="rating-bar"><div class="rating-bar-fill" style="width: 72%"></div></div>
+                <span>172</span>
+              </div>
+              <div class="rating-bar-row">
+                <span>4 ★</span>
+                <div class="rating-bar"><div class="rating-bar-fill" style="width: 18%"></div></div>
+                <span>43</span>
+              </div>
+              <div class="rating-bar-row">
+                <span>3 ★</span>
+                <div class="rating-bar"><div class="rating-bar-fill" style="width: 6%"></div></div>
+                <span>15</span>
+              </div>
+              <div class="rating-bar-row">
+                <span>2 ★</span>
+                <div class="rating-bar"><div class="rating-bar-fill" style="width: 2%"></div></div>
+                <span>5</span>
+              </div>
+              <div class="rating-bar-row">
+                <span>1 ★</span>
+                <div class="rating-bar"><div class="rating-bar-fill" style="width: 1%"></div></div>
+                <span>3</span>
+              </div>
+            </div>
+
+            <div class="sort-dropdown">
+              <label>Sort by:</label>
+              <select id="reviewSort" onchange="sortReviews()">
+                <option value="recent">Most Recent</option>
+                <option value="highest">Highest Rated</option>
+                <option value="lowest">Lowest Rated</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="reviews-grid" id="reviewsGrid">
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <h4 class="review-title">Life-changing commute</h4>
+              <p class="review-body">I've been riding this bike for 3 months now and it's completely transformed my daily commute. The belt drive is whisper quiet and I love not dealing with chain grease anymore.</p>
+              <div class="review-author">
+                <span class="author-name">Michael T.</span>
+                <span class="author-date">Jan 12, 2026</span>
+              </div>
+            </div>
+
+            <div class="review-card has-photo">
+              <img src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?w=200&h=150&fit=crop" alt="Review photo" class="review-photo">
+              <div class="review-stars">★★★★★</div>
+              <h4 class="review-title">Worth every penny</h4>
+              <p class="review-body">The build quality is exceptional. Assembly was a breeze and customer support was incredibly helpful when I had questions.</p>
+              <div class="review-author">
+                <span class="author-name">Sarah K.</span>
+                <span class="author-date">Jan 8, 2026</span>
+              </div>
+            </div>
+
+            <div class="review-card">
+              <div class="review-stars">★★★★☆</div>
+              <h4 class="review-title">Great bike, minor quibbles</h4>
+              <p class="review-body">Really solid bike overall. The only thing I'd change is adding a front rack mounting option. Otherwise, perfect for city riding.</p>
+              <div class="review-author">
+                <span class="author-name">David L.</span>
+                <span class="author-date">Dec 29, 2025</span>
+              </div>
+            </div>
+
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <h4 class="review-title">Impressed by range</h4>
+              <p class="review-body">I consistently get 60+ miles on a charge with moderate pedal assist. That's more than enough for my needs. The torque sensor feels natural and responsive.</p>
+              <div class="review-author">
+                <span class="author-name">Jennifer M.</span>
+                <span class="author-date">Dec 22, 2025</span>
+              </div>
+            </div>
+
+            <div class="review-card has-photo">
+              <img src="https://images.unsplash.com/photo-1505705694340-019e1e335916?w=200&h=150&fit=crop" alt="Review photo" class="review-photo">
+              <div class="review-stars">★★★★★</div>
+              <h4 class="review-title">Beautiful design</h4>
+              <p class="review-body">People stop me all the time to ask about this bike. The clean lines and integrated battery make it look more like a regular bike. Love it!</p>
+              <div class="review-author">
+                <span class="author-name">Alex R.</span>
+                <span class="author-date">Dec 15, 2025</span>
+              </div>
+            </div>
+
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <h4 class="review-title">Replaced my car</h4>
+              <p class="review-body">Haven't driven to work in 2 months. This bike handles hills effortlessly and the hydraulic brakes give me confidence in traffic. Best purchase of the year.</p>
+              <div class="review-author">
+                <span class="author-name">Chris P.</span>
+                <span class="author-date">Dec 10, 2025</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reviews-pagination">
+          <button class="page-btn active">1</button>
+          <button class="page-btn" onclick="loadReviewPage(2)">2</button>
+          <button class="page-btn" onclick="loadReviewPage(3)">3</button>
+          <span class="page-ellipsis">...</span>
+          <button class="page-btn" onclick="loadReviewPage(12)">12</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SECTION 9: HOW-TO VIDEOS ========== -->
+    <section class="howto-section">
+      <div class="section-container">
+        <h2 class="section-title">How-To Videos</h2>
+
+        <div class="howto-grid">
+          <div class="howto-card" onclick="openVideoModal()">
+            <div class="howto-thumb">
+              <img src="https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=400&h=250&fit=crop" alt="Assembly Guide">
+              <div class="howto-play">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="howto-duration">12:34</span>
+            </div>
+            <h4>Assembly Guide</h4>
+            <p>Step-by-step unboxing and assembly instructions</p>
+          </div>
+
+          <div class="howto-card" onclick="openVideoModal()">
+            <div class="howto-thumb">
+              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop" alt="Belt Tensioning">
+              <div class="howto-play">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="howto-duration">5:45</span>
+            </div>
+            <h4>Belt Tensioning</h4>
+            <p>How to adjust your belt drive for optimal performance</p>
+          </div>
+
+          <div class="howto-card" onclick="openVideoModal()">
+            <div class="howto-thumb">
+              <img src="https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=400&h=250&fit=crop" alt="Brake Adjustment">
+              <div class="howto-play">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="howto-duration">8:20</span>
+            </div>
+            <h4>Brake Adjustment</h4>
+            <p>Fine-tune your hydraulic disc brakes</p>
+          </div>
+
+          <div class="howto-card" onclick="openVideoModal()">
+            <div class="howto-thumb">
+              <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=250&fit=crop" alt="App Setup">
+              <div class="howto-play">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="howto-duration">3:15</span>
+            </div>
+            <h4>App Setup & Features</h4>
+            <p>Connect your bike and explore all features</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="product-scripts.js"></script>
+</body>
+</html>
