@@ -3,490 +3,921 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TENWAYS - Electric Bikes</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>TENWAYS - Electric Bikes | Ride the Future</title>
+    <link rel="stylesheet" href="styles-v2.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Cursor follower -->
+    <div class="cursor-glow"></div>
+
+    <!-- Noise overlay -->
+    <div class="noise-overlay"></div>
+
     <!-- Header -->
     <header class="header">
         <div class="announcement-bar">
-            <div class="container">
-                <p>New Year, New Ride: Save up to $600 on selected <a href="#">e-bikes</a>.</p>
+            <div class="marquee">
+                <span>NEW YEAR, NEW RIDE — SAVE UP TO $600 ON SELECTED E-BIKES — </span>
+                <span>NEW YEAR, NEW RIDE — SAVE UP TO $600 ON SELECTED E-BIKES — </span>
+                <span>NEW YEAR, NEW RIDE — SAVE UP TO $600 ON SELECTED E-BIKES — </span>
+                <span>NEW YEAR, NEW RIDE — SAVE UP TO $600 ON SELECTED E-BIKES — </span>
             </div>
-            <button class="close-btn" aria-label="Close announcement">
-                <svg width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 1L12 15M12 1L1 15" stroke="white" stroke-width="1.5"/>
-                </svg>
-            </button>
         </div>
         <nav class="main-nav">
             <div class="nav-container">
                 <a href="#" class="logo">
-                    <svg width="112" height="14" viewBox="0 0 112 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <text x="0" y="12" fill="#000" font-family="Inter" font-weight="700" font-size="14">TENWAYS</text>
-                    </svg>
+                    <img src="https://cdn.shopify.com/s/files/1/0577/1939/0270/files/tapsnel-logo-4.png?v=1769693565" alt="TENWAYS" class="logo-img">
                 </a>
                 <ul class="nav-links">
-                    <li class="has-dropdown">
-                        <a href="#">E-Bikes <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2"/></svg></a>
+                    <li class="has-mega-menu">
+                        <a href="#" data-text="E-Bikes">
+                            E-Bikes
+                            <svg class="nav-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </a>
+                        <div class="mega-menu">
+                            <div class="mega-menu-inner">
+                                <!-- Left: Categories -->
+                                <div class="mega-categories">
+                                    <div class="mega-section-title">Shop by Category</div>
+                                    <nav class="mega-cat-list">
+                                        <a href="#" class="mega-cat-item active">
+                                            <span class="mega-cat-name">All E-Bikes</span>
+                                            <span class="mega-cat-count">4</span>
+                                        </a>
+                                        <a href="#" class="mega-cat-item">
+                                            <span class="mega-cat-name">City</span>
+                                            <span class="mega-cat-count">2</span>
+                                        </a>
+                                        <a href="#" class="mega-cat-item">
+                                            <span class="mega-cat-name">Hybrid</span>
+                                            <span class="mega-cat-count">1</span>
+                                        </a>
+                                        <a href="#" class="mega-cat-item">
+                                            <span class="mega-cat-name">Cargo</span>
+                                            <span class="mega-cat-count">1</span>
+                                        </a>
+                                    </nav>
+                                    <div class="mega-benefits">
+                                        <div class="mega-benefit">
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+                                            </svg>
+                                            <span>Free Shipping</span>
+                                        </div>
+                                        <div class="mega-benefit">
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                            </svg>
+                                            <span>2-Year Warranty</span>
+                                        </div>
+                                        <div class="mega-benefit">
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M23 12l-2.44-2.78.34-3.68-3.61-.82-1.89-3.18L12 3 8.6 1.54 6.71 4.72l-3.61.81.34 3.68L1 12l2.44 2.78-.34 3.69 3.61.82 1.89 3.18L12 21l3.4 1.46 1.89-3.18 3.61-.82-.34-3.68L23 12z"/>
+                                                <path d="M9 12l2 2 4-4"/>
+                                            </svg>
+                                            <span>30-Day Returns</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Center: Featured Products -->
+                                <div class="mega-products">
+                                    <div class="mega-section-title">Featured Models</div>
+                                    <div class="mega-products-grid">
+                                        <a href="#" class="mega-product-card">
+                                            <div class="mega-product-img">
+                                                <img src="https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=400&h=300&fit=crop" alt="CGO600 Pro">
+                                                <div class="mega-product-overlay">
+                                                    <span class="mega-quick-view">Quick View</span>
+                                                </div>
+                                            </div>
+                                            <div class="mega-product-details">
+                                                <div class="mega-product-header">
+                                                    <span class="mega-product-badge">Bestseller</span>
+                                                    <h4>CGO600 Pro</h4>
+                                                </div>
+                                                <p class="mega-product-subtitle">The Lightweight Champion</p>
+                                                <div class="mega-product-stats">
+                                                    <div class="mega-stat">
+                                                        <span class="mega-stat-value">100km</span>
+                                                        <span class="mega-stat-label">Range</span>
+                                                    </div>
+                                                    <div class="mega-stat">
+                                                        <span class="mega-stat-value">16kg</span>
+                                                        <span class="mega-stat-label">Weight</span>
+                                                    </div>
+                                                    <div class="mega-stat">
+                                                        <span class="mega-stat-value">25km/h</span>
+                                                        <span class="mega-stat-label">Speed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="mega-product-bottom">
+                                                    <span class="mega-product-price">$1,699</span>
+                                                    <span class="mega-product-btn">Shop Now →</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="mega-product-card">
+                                            <div class="mega-product-img">
+                                                <img src="https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=400&h=300&fit=crop" alt="AGO X">
+                                                <div class="mega-product-overlay">
+                                                    <span class="mega-quick-view">Quick View</span>
+                                                </div>
+                                            </div>
+                                            <div class="mega-product-details">
+                                                <div class="mega-product-header">
+                                                    <span class="mega-product-badge new">New</span>
+                                                    <h4>AGO X</h4>
+                                                </div>
+                                                <p class="mega-product-subtitle">The Urban All-rounder</p>
+                                                <div class="mega-product-stats">
+                                                    <div class="mega-stat">
+                                                        <span class="mega-stat-value">80km</span>
+                                                        <span class="mega-stat-label">Range</span>
+                                                    </div>
+                                                    <div class="mega-stat">
+                                                        <span class="mega-stat-value">21kg</span>
+                                                        <span class="mega-stat-label">Weight</span>
+                                                    </div>
+                                                    <div class="mega-stat">
+                                                        <span class="mega-stat-value">25km/h</span>
+                                                        <span class="mega-stat-label">Speed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="mega-product-bottom">
+                                                    <span class="mega-product-price">$1,999</span>
+                                                    <span class="mega-product-btn">Shop Now →</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Right: Promo -->
+                                <div class="mega-promo-section">
+                                    <div class="mega-promo-card">
+                                        <div class="mega-promo-content">
+                                            <span class="mega-promo-label">Limited Offer</span>
+                                            <h3 class="mega-promo-title">Save up to $600</h3>
+                                            <p class="mega-promo-text">New Year Sale on selected models. Don't miss out!</p>
+                                            <a href="#" class="mega-promo-btn">
+                                                View Deals
+                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                        <div class="mega-promo-visual">
+                                            <div class="mega-promo-circle"></div>
+                                            <div class="mega-promo-circle secondary"></div>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="mega-compare-link">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M16 3h5v5M8 3H3v5M3 16v5h5M21 16v5h-5M21 3l-9 9M3 21l9-9"/>
+                                        </svg>
+                                        Compare All Models
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </li>
-                    <li><a href="#">Accessories</a></li>
-                    <li><a href="#">Reviews</a></li>
-                    <li><a href="#">Support</a></li>
-                    <li><a href="#">Find a Store</a></li>
+                    <li><a href="#" data-text="Accessories">Accessories</a></li>
+                    <li><a href="#" data-text="Reviews">Reviews</a></li>
+                    <li><a href="#" data-text="Support">Support</a></li>
+                    <li><a href="#" data-text="Stores">Stores</a></li>
                 </ul>
                 <div class="nav-actions">
-                    <a href="#" class="account-link">My Account</a>
+                    <a href="#" class="nav-link-styled">Account</a>
                     <button class="cart-btn" aria-label="Cart">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M6 6H21L19 16H8L6 6Z" stroke="currentColor" stroke-width="2"/>
-                            <circle cx="10" cy="20" r="2" fill="currentColor"/>
-                            <circle cx="17" cy="20" r="2" fill="currentColor"/>
+                        <span class="cart-count">0</span>
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M6 6H21L19 16H8L6 6Z"/>
+                            <circle cx="10" cy="20" r="1.5"/>
+                            <circle cx="17" cy="20" r="1.5"/>
                         </svg>
+                    </button>
+                    <button class="mobile-menu-btn" aria-label="Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </button>
                 </div>
             </div>
         </nav>
+        <!-- Mobile Menu Drawer -->
+        <div class="mobile-menu">
+            <div class="mobile-menu-inner">
+                <nav class="mobile-nav">
+                    <a href="#bikes" class="mobile-nav-link">E-Bikes</a>
+                    <a href="#" class="mobile-nav-link">Accessories</a>
+                    <a href="#" class="mobile-nav-link">Reviews</a>
+                    <a href="#" class="mobile-nav-link">Support</a>
+                    <a href="#" class="mobile-nav-link">Stores</a>
+                </nav>
+                <div class="mobile-menu-footer">
+                    <a href="#" class="btn btn-primary mobile-cta">
+                        <span>Shop Now</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="mobile-account-link">Account</a>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <!-- Hero Slider -->
-    <section class="hero-slider">
-        <div class="slides">
-            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=1440&h=600&fit=crop');">
-                <div class="slide-content">
-                    <span class="slide-subtitle">The Refined Comfort Explorer</span>
-                    <h1 class="slide-title">Strong → WAYFARER</h1>
-                    <p class="slide-description">An all-road e-bike engineered for comfort and effortless range.</p>
-                    <div class="slide-actions">
-                        <a href="#" class="btn btn-outline">Learn more</a>
-                        <a href="#" class="btn-link">Order now <svg width="13" height="20" viewBox="0 0 13 20" fill="none"><path d="M1 1L11 10L1 19" stroke="currentColor" stroke-width="2"/></svg></a>
-                    </div>
-                </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="hero-gradient"></div>
+            <video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=1920&h=1080&fit=crop">
+                <source src="https://cdn.shopify.com/videos/c/o/v/00ce90e5330441bc9651d215e88a5ae0.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="hero-content">
+            <div class="hero-eyebrow">
+                <span class="eyebrow-line"></span>
+                <span class="eyebrow-text">The Future of Urban Mobility</span>
             </div>
-            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=1440&h=600&fit=crop');">
-                <div class="slide-content">
-                    <span class="slide-subtitle">Comfort Meets Style</span>
-                    <h1 class="slide-title">Strong → CGO</h1>
-                    <p class="slide-description">A comfortable e-bike for commuting and leisure rides.</p>
-                    <div class="slide-actions">
-                        <a href="#" class="btn btn-outline">Learn more</a>
-                        <a href="#" class="btn-link">Order now <svg width="13" height="20" viewBox="0 0 13 20" fill="none"><path d="M1 1L11 10L1 19" stroke="currentColor" stroke-width="2"/></svg></a>
-                    </div>
-                </div>
-            </div>
-            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1440&h=600&fit=crop');">
-                <div class="slide-content">
-                    <span class="slide-subtitle">The Lightweight Champion</span>
-                    <h1 class="slide-title">Strong → CGO</h1>
-                    <p class="slide-description">Available in Shimano 8-Speed or Gates Carbon Belt Drive.</p>
-                    <div class="slide-actions">
-                        <a href="#" class="btn btn-outline">Learn more</a>
-                        <a href="#" class="btn-link">Order now <svg width="13" height="20" viewBox="0 0 13 20" fill="none"><path d="M1 1L11 10L1 19" stroke="currentColor" stroke-width="2"/></svg></a>
-                    </div>
-                </div>
-            </div>
-            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1544191696-102dbdaeeaa0?w=1440&h=600&fit=crop');">
-                <div class="slide-content">
-                    <span class="slide-subtitle">The Urban All-rounder</span>
-                    <h1 class="slide-title">Strong → AGO</h1>
-                    <p class="slide-description">Designed for daily errands and excelling on tougher terrains.</p>
-                    <div class="slide-actions">
-                        <a href="#" class="btn btn-outline">Learn more</a>
-                        <a href="#" class="btn-link">Order now <svg width="13" height="20" viewBox="0 0 13 20" fill="none"><path d="M1 1L11 10L1 19" stroke="currentColor" stroke-width="2"/></svg></a>
-                    </div>
-                </div>
+            <h1 class="hero-title">
+                <span class="title-line" data-delay="0">Ride</span>
+                <span class="title-line title-italic" data-delay="1">Electric.</span>
+                <span class="title-line" data-delay="2">Ride</span>
+                <span class="title-line title-italic" data-delay="3">Free.</span>
+            </h1>
+            <p class="hero-subtitle">Premium e-bikes engineered for the modern urban explorer.</p>
+            <div class="hero-cta">
+                <a href="#bikes" class="btn btn-primary">
+                    <span>Explore Collection</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12H19M19 12L12 5M19 12L12 19"/>
+                    </svg>
+                </a>
+                <a href="#" class="btn btn-ghost">Watch Film</a>
             </div>
         </div>
-        <div class="slide-thumbnails">
-            <button class="thumbnail active" data-slide="0">
-                <img src="https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=72&h=52&fit=crop" alt="WAYFARER">
-            </button>
-            <button class="thumbnail" data-slide="1">
-                <img src="https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=72&h=52&fit=crop" alt="CGO800S">
-            </button>
-            <button class="thumbnail" data-slide="2">
-                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=72&h=52&fit=crop" alt="CGO600 Pro">
-            </button>
-            <button class="thumbnail" data-slide="3">
-                <img src="https://images.unsplash.com/photo-1544191696-102dbdaeeaa0?w=72&h=52&fit=crop" alt="AGO X">
-            </button>
+        <div class="hero-scroll-indicator">
+            <span class="scroll-text">Scroll</span>
+            <div class="scroll-line"></div>
         </div>
-    </section>
-
-    <!-- Category Navigation -->
-    <nav class="category-nav">
-        <div class="container">
-            <h2>Electric Bikes</h2>
-            <ul>
-                <li><a href="#cruiser">Cruiser E-Bike</a></li>
-                <li><a href="#city">City E-Bike</a></li>
-                <li><a href="#hybrid">Hybrid E-Bike</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Cruiser E-Bike Section -->
-    <section id="cruiser" class="bike-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Cruiser E-bike</h2>
-                <p>Easygoing e-bikes made for fun and freedom.</p>
+        <div class="hero-stats">
+            <div class="stat">
+                <span class="stat-number" data-count="200">0</span>
+                <span class="stat-suffix">+</span>
+                <span class="stat-label">Service Centers</span>
             </div>
-            <div class="bike-card large">
-                <div class="bike-image">
-                    <img src="https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=1200&h=520&fit=crop" alt="WAYFARER">
-                </div>
-                <div class="bike-info">
-                    <span class="bike-label">CGO</span>
-                    <h3>WAYFARER</h3>
-                    <p>An all-road e-bike engineered for comfort and effortless range.</p>
-                    <div class="bike-price">
-                        <span class="price">$1,999</span>
-                    </div>
-                    <a href="#" class="btn btn-dark">Order now</a>
-                </div>
+            <div class="stat">
+                <span class="stat-number" data-count="50000">0</span>
+                <span class="stat-suffix">+</span>
+                <span class="stat-label">Happy Riders</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number" data-count="24">0</span>
+                <span class="stat-suffix">/7</span>
+                <span class="stat-label">Support</span>
             </div>
         </div>
     </section>
 
-    <!-- City E-Bike Section -->
-    <section id="city" class="bike-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>City E-Bike</h2>
-                <p>Sleek and nimble commuter e-bikes.</p>
+    <!-- Featured Bikes Carousel -->
+    <section class="featured-bikes" id="bikes">
+        <div class="section-header">
+            <div class="section-label">
+                <span class="label-number">01</span>
+                <span class="label-text">Featured Models</span>
             </div>
-            <div class="bike-grid">
-                <div class="bike-card">
-                    <div class="bike-image">
-                        <img src="https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=589&h=400&fit=crop" alt="CGO600">
+            <h2 class="section-title">Our <em>Signature</em> Collection</h2>
+        </div>
+        <div class="bikes-carousel">
+            <div class="bike-slide active" data-bike="wayfarer">
+                <div class="bike-visual">
+                    <div class="bike-image-container">
+                        <img src="https://cdn.shopify.com/s/files/1/0577/1939/0270/files/sam-bike-1.jpg?v=1769759796" alt="WAYFARER" class="bike-image">
+                        <div class="bike-image-overlay"></div>
                     </div>
-                    <div class="bike-info">
-                        <span class="bike-label">CGO</span>
-                        <h3>CGO600</h3>
-                        <p>The lightweight city commuter.</p>
-                        <div class="bike-price">
-                            <span class="price">$1,299</span>
+                    <div class="bike-badge">NEW</div>
+                </div>
+                <div class="bike-details">
+                    <span class="bike-series">CGO Series</span>
+                    <h3 class="bike-name">WAYFARER</h3>
+                    <p class="bike-tagline">The Refined Comfort Explorer</p>
+                    <p class="bike-description">An all-road e-bike engineered for comfort and effortless range. Perfect for those who refuse to compromise.</p>
+                    <div class="bike-specs">
+                        <div class="spec">
+                            <span class="spec-value">70km</span>
+                            <span class="spec-label">Range</span>
                         </div>
-                        <a href="#" class="btn btn-dark">Order now</a>
-                    </div>
-                </div>
-                <div class="bike-card">
-                    <div class="bike-image">
-                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=589&h=400&fit=crop" alt="CGO800S">
-                    </div>
-                    <div class="bike-info">
-                        <span class="bike-label">CGO</span>
-                        <h3>CGO800S</h3>
-                        <p>Premium urban commuter.</p>
-                        <div class="bike-price">
-                            <span class="price">$1,799</span>
+                        <div class="spec">
+                            <span class="spec-value">19kg</span>
+                            <span class="spec-label">Weight</span>
                         </div>
-                        <a href="#" class="btn btn-dark">Order now</a>
+                        <div class="spec">
+                            <span class="spec-value">25km/h</span>
+                            <span class="spec-label">Top Speed</span>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Hybrid E-Bike Section -->
-    <section id="hybrid" class="bike-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Hybrid E-Bike</h2>
-                <p>Versatile e-bikes for all types of urban roads.</p>
-            </div>
-            <div class="bike-card large">
-                <div class="bike-image">
-                    <img src="https://images.unsplash.com/photo-1544191696-102dbdaeeaa0?w=1200&h=520&fit=crop" alt="AGO X">
-                </div>
-                <div class="bike-info">
-                    <span class="bike-label">AGO</span>
-                    <h3>AGO X</h3>
-                    <p>Designed for daily errands and excelling on tougher terrains.</p>
                     <div class="bike-price">
-                        <span class="price">$1,699</span>
+                        <span class="price-current">$1,999</span>
+                        <span class="price-original">$2,299</span>
                     </div>
-                    <a href="#" class="btn btn-dark">Order now</a>
+                    <div class="bike-actions">
+                        <a href="#" class="btn btn-primary">Order Now</a>
+                        <a href="#" class="btn btn-outline">Learn More</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Cargo E-Bike Section -->
-    <section id="cargo" class="bike-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Cargo E-Bike</h2>
-                <p>Versatile cargo e-bikes of superior value.</p>
-            </div>
-            <div class="bike-card large">
-                <div class="bike-image">
-                    <img src="https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=1200&h=520&fit=crop" alt="CARGO ONE">
+            <div class="bike-slide" data-bike="cgo800s">
+                <div class="bike-visual">
+                    <div class="bike-image-container">
+                        <img src="https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=800&h=600&fit=crop" alt="CGO800S" class="bike-image">
+                        <div class="bike-image-overlay"></div>
+                    </div>
                 </div>
-                <div class="bike-info">
-                    <span class="bike-label">CARGO</span>
-                    <h3>CARGO ONE</h3>
-                    <p>The ultimate cargo solution for families and businesses.</p>
+                <div class="bike-details">
+                    <span class="bike-series">CGO Series</span>
+                    <h3 class="bike-name">CGO800S</h3>
+                    <p class="bike-tagline">Comfort Meets Style</p>
+                    <p class="bike-description">A comfortable e-bike for commuting and leisure rides. Where elegance meets everyday practicality.</p>
+                    <div class="bike-specs">
+                        <div class="spec">
+                            <span class="spec-value">100km</span>
+                            <span class="spec-label">Range</span>
+                        </div>
+                        <div class="spec">
+                            <span class="spec-value">17kg</span>
+                            <span class="spec-label">Weight</span>
+                        </div>
+                        <div class="spec">
+                            <span class="spec-value">25km/h</span>
+                            <span class="spec-label">Top Speed</span>
+                        </div>
+                    </div>
                     <div class="bike-price">
-                        <span class="price">$3,999</span>
+                        <span class="price-current">$1,799</span>
                     </div>
-                    <a href="#" class="btn btn-dark">Order now</a>
+                    <div class="bike-actions">
+                        <a href="product-cgo800s.html" class="btn btn-primary">Order Now</a>
+                        <a href="product-cgo800s.html" class="btn btn-outline">Learn More</a>
+                    </div>
                 </div>
+            </div>
+            <div class="bike-slide" data-bike="ago-x">
+                <div class="bike-visual">
+                    <div class="bike-image-container">
+                        <img src="https://images.unsplash.com/photo-1544191696-102dbdaeeaa0?w=800&h=600&fit=crop" alt="AGO X" class="bike-image">
+                        <div class="bike-image-overlay"></div>
+                    </div>
+                    <div class="bike-badge">BESTSELLER</div>
+                </div>
+                <div class="bike-details">
+                    <span class="bike-series">AGO Series</span>
+                    <h3 class="bike-name">AGO X</h3>
+                    <p class="bike-tagline">The Urban All-rounder</p>
+                    <p class="bike-description">Designed for daily errands and excelling on tougher terrains. Built for those who demand more.</p>
+                    <div class="bike-specs">
+                        <div class="spec">
+                            <span class="spec-value">80km</span>
+                            <span class="spec-label">Range</span>
+                        </div>
+                        <div class="spec">
+                            <span class="spec-value">21kg</span>
+                            <span class="spec-label">Weight</span>
+                        </div>
+                        <div class="spec">
+                            <span class="spec-value">25km/h</span>
+                            <span class="spec-label">Top Speed</span>
+                        </div>
+                    </div>
+                    <div class="bike-price">
+                        <span class="price-current">$1,699</span>
+                    </div>
+                    <div class="bike-actions">
+                        <a href="#" class="btn btn-primary">Order Now</a>
+                        <a href="#" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="bike-slide" data-bike="cgo600">
+                <div class="bike-visual">
+                    <div class="bike-image-container">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop" alt="CGO600 Pro" class="bike-image">
+                        <div class="bike-image-overlay"></div>
+                    </div>
+                </div>
+                <div class="bike-details">
+                    <span class="bike-series">CGO Series</span>
+                    <h3 class="bike-name">CGO600 Pro</h3>
+                    <p class="bike-tagline">The Lightweight Champion</p>
+                    <p class="bike-description">Available in Shimano 8-Speed or Gates Carbon Belt Drive. Pure performance, zero compromise.</p>
+                    <div class="bike-specs">
+                        <div class="spec">
+                            <span class="spec-value">100km</span>
+                            <span class="spec-label">Range</span>
+                        </div>
+                        <div class="spec">
+                            <span class="spec-value">16kg</span>
+                            <span class="spec-label">Weight</span>
+                        </div>
+                        <div class="spec">
+                            <span class="spec-value">25km/h</span>
+                            <span class="spec-label">Top Speed</span>
+                        </div>
+                    </div>
+                    <div class="bike-price">
+                        <span class="price-current">$1,299</span>
+                    </div>
+                    <div class="bike-actions">
+                        <a href="#" class="btn btn-primary">Order Now</a>
+                        <a href="#" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-nav">
+            <button class="carousel-btn prev" aria-label="Previous">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M19 12H5M5 12L12 19M5 12L12 5"/>
+                </svg>
+            </button>
+            <div class="carousel-indicators">
+                <button class="indicator active" data-index="0"></button>
+                <button class="indicator" data-index="1"></button>
+                <button class="indicator" data-index="2"></button>
+                <button class="indicator" data-index="3"></button>
+            </div>
+            <button class="carousel-btn next" aria-label="Next">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M5 12H19M19 12L12 5M19 12L12 19"/>
+                </svg>
+            </button>
+        </div>
+    </section>
+
+    <!-- Categories Grid - Redesigned -->
+    <section class="categories" id="categories">
+        <div class="categories-ambient"></div>
+        <div class="container">
+            <div class="section-header categories-header">
+                <div class="section-label">
+                    <span class="label-number">02</span>
+                    <span class="label-text">Browse by Type</span>
+                </div>
+                <h2 class="section-title">Find Your <em>Perfect</em> Ride</h2>
+                <p class="section-subtitle">Four distinct styles, one perfect match for you</p>
+            </div>
+            <div class="categories-grid">
+                <a href="#" class="category-card" data-category="cruiser" data-tilt>
+                    <div class="card-glow"></div>
+                    <div class="card-border"></div>
+                    <div class="category-bg" style="background-image: url('https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=600&h=800&fit=crop');"></div>
+                    <div class="category-shine"></div>
+                    <div class="category-content">
+                        <div class="category-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="5" cy="18" r="3"/><circle cx="19" cy="18" r="3"/>
+                                <path d="M12 18V12L7 8H17L12 12"/>
+                            </svg>
+                        </div>
+                        <span class="category-count">2 Models</span>
+                        <h3 class="category-name">Cruiser</h3>
+                        <p class="category-desc">Easygoing e-bikes made for fun and freedom</p>
+                        <span class="category-link">
+                            <span class="link-text">Explore Collection</span>
+                            <span class="link-arrow">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                                </svg>
+                            </span>
+                        </span>
+                    </div>
+                </a>
+                <a href="#" class="category-card" data-category="city" data-tilt>
+                    <div class="card-glow"></div>
+                    <div class="card-border"></div>
+                    <div class="category-bg" style="background-image: url('https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=600&h=800&fit=crop');"></div>
+                    <div class="category-shine"></div>
+                    <div class="category-content">
+                        <div class="category-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M3 21H21M5 21V7L12 3L19 7V21M9 21V15H15V21"/>
+                            </svg>
+                        </div>
+                        <span class="category-count">3 Models</span>
+                        <h3 class="category-name">City</h3>
+                        <p class="category-desc">Sleek and nimble commuter e-bikes</p>
+                        <span class="category-link">
+                            <span class="link-text">Explore Collection</span>
+                            <span class="link-arrow">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                                </svg>
+                            </span>
+                        </span>
+                    </div>
+                </a>
+                <a href="#" class="category-card" data-category="hybrid" data-tilt>
+                    <div class="card-glow"></div>
+                    <div class="card-border"></div>
+                    <div class="category-bg" style="background-image: url('https://images.unsplash.com/photo-1544191696-102dbdaeeaa0?w=600&h=800&fit=crop');"></div>
+                    <div class="category-shine"></div>
+                    <div class="category-content">
+                        <div class="category-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 2L2 7L12 12L22 7L12 2Z"/><path d="M2 17L12 22L22 17"/><path d="M2 12L12 17L22 12"/>
+                            </svg>
+                        </div>
+                        <span class="category-count">2 Models</span>
+                        <h3 class="category-name">Hybrid</h3>
+                        <p class="category-desc">Versatile e-bikes for all urban roads</p>
+                        <span class="category-link">
+                            <span class="link-text">Explore Collection</span>
+                            <span class="link-arrow">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                                </svg>
+                            </span>
+                        </span>
+                    </div>
+                </a>
+                <a href="#" class="category-card large" data-category="cargo" data-tilt>
+                    <div class="card-glow"></div>
+                    <div class="card-border"></div>
+                    <div class="category-bg" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop');"></div>
+                    <div class="category-shine"></div>
+                    <div class="category-content">
+                        <div class="category-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="1" y="6" width="15" height="10" rx="1"/><path d="M16 10H20L23 13V16H16V10Z"/>
+                                <circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+                            </svg>
+                        </div>
+                        <span class="category-count">1 Model</span>
+                        <h3 class="category-name">Cargo</h3>
+                        <p class="category-desc">Superior value cargo e-bikes for families and businesses</p>
+                        <span class="category-link">
+                            <span class="link-text">Explore Collection</span>
+                            <span class="link-arrow">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                                </svg>
+                            </span>
+                        </span>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Why TENWAYS Section -->
-    <section class="why-tenways">
+    <!-- Why TENWAYS -->
+    <section class="why-section">
+        <div class="why-bg">
+            <div class="why-gradient"></div>
+        </div>
         <div class="container">
-            <span class="section-label">Why TENWAYS</span>
-            <h2>High quality, crafted to last</h2>
-            <div class="features-grid">
-                <div class="feature-card large">
-                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=386&h=433&fit=crop" alt="Easy maintenance">
+            <div class="section-header light">
+                <div class="section-label">
+                    <span class="label-number">03</span>
+                    <span class="label-text">Why Choose Us</span>
+                </div>
+                <h2 class="section-title">High Quality,<br><em>Crafted</em> to Last</h2>
+            </div>
+            <div class="features-bento">
+                <div class="feature-card feature-main">
+                    <div class="feature-visual">
+                        <img src="https://cdn.shopify.com/s/files/1/0577/1939/0270/files/sam-ebike-2.jpg?v=1769760129" alt="Quality">
+                    </div>
                     <div class="feature-content">
-                        <p>Easy maintenance with standard components</p>
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 2L2 7L12 12L22 7L12 2Z"/>
+                                <path d="M2 17L12 22L22 17"/>
+                                <path d="M2 12L12 17L22 12"/>
+                            </svg>
+                        </div>
+                        <h3>Easy Maintenance</h3>
+                        <p>Standard components mean any bike shop can service your TENWAYS. No proprietary parts, no hassle.</p>
                     </div>
                 </div>
                 <div class="feature-card">
-                    <img src="https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=386&h=206&fit=crop" alt="Service centers">
-                    <div class="feature-content">
-                        <h3>200+</h3>
-                        <p>Service centers</p>
-                    </div>
+                    <div class="feature-number">200+</div>
+                    <h3>Service Centers</h3>
+                    <p>Worldwide network ready to help</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M20 4L4 12V28L20 36L36 28V12L20 4Z" stroke="white" stroke-width="2"/>
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6V12L16 14"/>
                         </svg>
                     </div>
-                    <div class="feature-content">
-                        <p>Spare parts supply beyond the warranty period</p>
-                    </div>
+                    <h3>Swift Delivery</h3>
+                    <p>Ships in 2 business days</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 8L32 32M32 8L8 32" stroke="white" stroke-width="2"/>
-                            <circle cx="20" cy="20" r="16" stroke="white" stroke-width="2"/>
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 15V19C21 20.1 20.1 21 19 21H5C3.9 21 3 20.1 3 19V15"/>
+                            <path d="M12 3V15M12 15L7 10M12 15L17 10"/>
                         </svg>
                     </div>
-                    <div class="feature-content">
-                        <p>Swift Delivery Starts in 2 Business Days</p>
-                    </div>
+                    <h3>Spare Parts</h3>
+                    <p>Available beyond warranty</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-content dark">
-                        <h3>24/7</h3>
-                        <p>Customer Support</p>
-                    </div>
+                <div class="feature-card feature-highlight">
+                    <div class="feature-number">24/7</div>
+                    <h3>Customer Support</h3>
+                    <p>We're always here when you need us. Chat, call, or email—your choice.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Press Reviews Section -->
-    <section class="press-reviews">
+    <!-- Press & Reviews -->
+    <section class="press-section">
         <div class="container">
             <div class="press-logos">
-                <img src="https://via.placeholder.com/100x32?text=Electric+Bike" alt="Electric Bike Report">
-                <img src="https://via.placeholder.com/90x32?text=Electrek" alt="Electrek">
-                <img src="https://via.placeholder.com/73x32?text=BI" alt="Business Insider">
-                <img src="https://via.placeholder.com/126x32?text=Expert" alt="Expert Reviews">
-            </div>
-            <div class="reviews-slider">
-                <button class="slider-btn prev" aria-label="Previous review">
-                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M20 8L12 16L20 24" stroke="currentColor" stroke-width="2"/></svg>
-                </button>
-                <div class="review-content">
-                    <blockquote>"Good-looking e-bike that performs well."</blockquote>
-                    <cite>— Top Green Transport News Website —</cite>
+                <div class="press-logo">
+                    <img src="https://cdn.shopify.com/s/files/1/0577/1939/0270/files/t-logo-1.png?v=1769694858" alt="Electric Bike Report">
                 </div>
-                <button class="slider-btn next" aria-label="Next review">
-                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M12 8L20 16L12 24" stroke="currentColor" stroke-width="2"/></svg>
+                <div class="press-logo">
+                    <img src="https://cdn.shopify.com/s/files/1/0577/1939/0270/files/t-logo-2.png?v=1769694858" alt="Electrek">
+                </div>
+                <div class="press-logo">
+                    <img src="https://cdn.shopify.com/s/files/1/0577/1939/0270/files/t-logo-3.png?v=1769694858" alt="Business Insider">
+                </div>
+                <div class="press-logo">
+                    <img src="https://cdn.shopify.com/s/files/1/0577/1939/0270/files/t-logo-4.png?v=1769694858" alt="Expert Reviews">
+                </div>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial active">
+                    <blockquote>
+                        <span class="quote-mark">"</span>
+                        A smooth and responsive feel that can make you feel like a superhero—or at least a pro athlete!
+                    </blockquote>
+                    <cite>
+                        <span class="cite-source">Electric Bike Report</span>
+                        <span class="cite-rating">★★★★★</span>
+                    </cite>
+                </div>
+                <div class="testimonial">
+                    <blockquote>
+                        <span class="quote-mark">"</span>
+                        Good-looking e-bike that performs well.
+                    </blockquote>
+                    <cite>
+                        <span class="cite-source">Electrek</span>
+                        <span class="cite-rating">★★★★★</span>
+                    </cite>
+                </div>
+                <div class="testimonial">
+                    <blockquote>
+                        <span class="quote-mark">"</span>
+                        Packed with features usually attributed to more expensive e-bikes.
+                    </blockquote>
+                    <cite>
+                        <span class="cite-source">Expert Reviews</span>
+                        <span class="cite-rating">★★★★★</span>
+                    </cite>
+                </div>
+            </div>
+            <div class="testimonial-nav">
+                <button class="testimonial-btn prev" aria-label="Previous">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M5 12L12 19M5 12L12 5"/>
+                    </svg>
+                </button>
+                <div class="testimonial-progress">
+                    <div class="progress-bar"></div>
+                </div>
+                <button class="testimonial-btn next" aria-label="Next">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12H19M19 12L12 5M19 12L12 19"/>
+                    </svg>
                 </button>
             </div>
         </div>
     </section>
 
-    <!-- Support Section -->
-    <section class="support-section" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1440&h=400&fit=crop');">
+    <!-- Support CTA -->
+    <section class="support-cta">
+        <div class="support-bg">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=600&fit=crop" alt="">
+            <div class="support-overlay"></div>
+        </div>
         <div class="container">
-            <h2>Got questions? Just ask-we're here to help.</h2>
-            <a href="#" class="btn btn-white">
-                <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="19" cy="19" r="17" stroke="currentColor" stroke-width="2"/>
-                    <path d="M14 16C14 13.2386 16.2386 11 19 11C21.7614 11 24 13.2386 24 16C24 18.7614 21.7614 21 19 21V24" stroke="currentColor" stroke-width="2"/>
-                    <circle cx="19" cy="28" r="1.5" fill="currentColor"/>
-                </svg>
-                Contact support
-            </a>
+            <div class="support-content">
+                <h2>Got Questions?<br><em>We're Here.</em></h2>
+                <p>Our expert team is ready to help you find your perfect ride.</p>
+                <a href="#" class="btn btn-white">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M21 11.5C21 16.75 16.75 21 11.5 21C6.25 21 2 16.75 2 11.5C2 6.25 6.25 2 11.5 2"/>
+                        <path d="M22 22L20 20"/>
+                        <path d="M15 8H17M17 8H19M17 8V6M17 8V10"/>
+                    </svg>
+                    Contact Support
+                </a>
+            </div>
         </div>
     </section>
 
-    <!-- More to Discover Section -->
+    <!-- Discover More -->
     <section class="discover-section">
         <div class="container">
-            <div class="section-header-with-nav">
-                <h2>More to Discover</h2>
-                <div class="slider-nav">
-                    <button class="slider-btn prev" aria-label="Previous">
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M20 8L12 16L20 24" stroke="currentColor" stroke-width="2"/></svg>
-                    </button>
-                    <button class="slider-btn next" aria-label="Next">
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M12 8L20 16L12 24" stroke="currentColor" stroke-width="2"/></svg>
-                    </button>
+            <div class="section-header">
+                <div class="section-label">
+                    <span class="label-number">04</span>
+                    <span class="label-text">Community</span>
                 </div>
+                <h2 class="section-title">More to <em>Discover</em></h2>
             </div>
-            <div class="discover-cards">
-                <a href="#" class="discover-card" style="background-image: url('https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=364&h=456&fit=crop');">
-                    <div class="card-content">
-                        <h3>The Green Rider Club</h3>
-                        <p>Collect Rider Points to unlock awesome rewards!</p>
+            <div class="discover-grid">
+                <a href="#" class="discover-card">
+                    <div class="discover-bg" style="background-image: url('https://cdn.shopify.com/s/files/1/0577/1939/0270/files/sam-bike-5.jpg?v=1769760872');"></div>
+                    <div class="discover-content">
+                        <span class="discover-tag">Rewards</span>
+                        <h3>Green Rider Club</h3>
+                        <p>Collect points, unlock awesome rewards</p>
                     </div>
                 </a>
-                <a href="#" class="discover-card" style="background-image: url('https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=364&h=456&fit=crop');">
-                    <div class="card-content">
+                <a href="#" class="discover-card">
+                    <div class="discover-bg" style="background-image: url('https://cdn.shopify.com/s/files/1/0577/1939/0270/files/sam-bike-4.jpg?v=1769760872');"></div>
+                    <div class="discover-content">
+                        <span class="discover-tag">Savings</span>
                         <h3>Discount Program</h3>
-                        <p>Verify your status and save $150!</p>
+                        <p>Verify your status and save $150</p>
                     </div>
                 </a>
-                <a href="#" class="discover-card" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=364&h=456&fit=crop');">
-                    <div class="card-content">
-                        <h3>TENWAYS × Just One Tree</h3>
-                        <p>Over 20,000 trees planted, thank you for being part of our journey!</p>
+                <a href="#" class="discover-card">
+                    <div class="discover-bg" style="background-image: url('https://cdn.shopify.com/s/files/1/0577/1939/0270/files/sam-bike-3.jpg?v=1769760872');"></div>
+                    <div class="discover-content">
+                        <span class="discover-tag">Sustainability</span>
+                        <h3>Just One Tree</h3>
+                        <p>20,000+ trees planted together</p>
                     </div>
                 </a>
-                <a href="#" class="discover-card" style="background-image: url('https://images.unsplash.com/photo-1544191696-102dbdaeeaa0?w=364&h=456&fit=crop');">
-                    <div class="card-content">
-                        <h3>Useful Tips</h3>
-                        <p>How to prepare your bike and yourself for the wet weather?</p>
+                <a href="#" class="discover-card">
+                    <div class="discover-bg" style="background-image: url('https://images.unsplash.com/photo-1544191696-102dbdaeeaa0?w=500&h=600&fit=crop');"></div>
+                    <div class="discover-content">
+                        <span class="discover-tag">Tips</span>
+                        <h3>Rider's Guide</h3>
+                        <p>Expert tips for every season</p>
                     </div>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Newsletter Section -->
+    <!-- Newsletter -->
     <section class="newsletter-section">
-        <div class="container">
+        <div class="newsletter-container">
             <div class="newsletter-content">
                 <div class="newsletter-text">
-                    <h2>Sign up for<br>the latest and greatest</h2>
-                    <p>Subscribe to stay up-to-date with our promotions, exclusive deals, and latest news. Just everything you may need.</p>
-                    <form class="newsletter-form">
-                        <div class="input-group">
-                            <input type="email" placeholder="name@email.com" required>
-                            <button type="submit" class="btn btn-dark">Subscribe</button>
-                        </div>
-                        <label class="checkbox-label">
-                            <input type="checkbox" required>
-                            <span>I agree to the <a href="#">Privacy Policy</a>.</span>
-                        </label>
-                    </form>
+                    <span class="newsletter-label">Newsletter</span>
+                    <h2>Stay in the <em>Loop</em></h2>
+                    <p>Subscribe for exclusive deals, new releases, and rider tips.</p>
                 </div>
-                <div class="newsletter-image">
-                    <img src="https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=570&h=323&fit=crop" alt="Subscribe">
+                <form class="newsletter-form">
+                    <div class="form-group">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn btn-primary">
+                            Subscribe
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12H19M19 12L12 5M19 12L12 19"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <label class="checkbox-wrapper">
+                        <input type="checkbox" required>
+                        <span class="checkmark"></span>
+                        <span class="checkbox-text">I agree to the <a href="#">Privacy Policy</a></span>
+                    </label>
+                </form>
+            </div>
+            <div class="newsletter-visual">
+                <div class="visual-frame">
+                    <img src="https://cdn.shopify.com/s/files/1/0577/1939/0270/files/sam-ebike-9.jpg?v=1769762528" alt="">
                 </div>
+                <div class="visual-decoration"></div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-column">
-                    <h4>Product</h4>
-                    <ul>
-                        <li><a href="#">WAYFARER</a></li>
-                        <li><a href="#">CGO600 Pro</a></li>
-                        <li><a href="#">CGO800S</a></li>
-                        <li><a href="#">AGO X</a></li>
-                        <li><a href="#">Accessories</a></li>
-                    </ul>
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-brand">
+                    <a href="#" class="footer-logo">
+                        <img src="https://cdn.shopify.com/s/files/1/0577/1939/0270/files/tapsnel-logo-4.png?v=1769693565" alt="TENWAYS" class="logo-img">
+                    </a>
+                    <p class="footer-tagline">Energized Urban Ride</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="2" y="2" width="20" height="20" rx="5"/>
+                                <circle cx="12" cy="12" r="4"/>
+                                <circle cx="18" cy="6" r="1.5" fill="currentColor"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="YouTube">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M22.54 6.42C22.4212 5.94541 22.1793 5.51057 21.8386 5.15941C21.498 4.80824 21.0707 4.55318 20.6 4.42C18.88 4 12 4 12 4C12 4 5.12 4 3.4 4.46C2.92925 4.59318 2.50198 4.84824 2.16135 5.19941C1.82072 5.55057 1.57879 5.98541 1.46 6.46C1 8.18 1 12 1 12C1 12 1 15.82 1.46 17.54C1.69 18.48 2.44 19.23 3.4 19.46C5.12 20 12 20 12 20C12 20 18.88 20 20.6 19.54C21.56 19.31 22.31 18.56 22.54 17.54C23 15.82 23 12 23 12C23 12 23 8.18 22.54 6.42Z"/>
+                                <path d="M9.75 15.02L15.5 12L9.75 8.98V15.02Z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M4 4L10.5 12.5L4 20H6L12 14L17 20H20L13 11L19 4H17L11.5 9.5L7 4H4Z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="TikTok">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M9 12C9 13.6569 7.65685 15 6 15C4.34315 15 3 13.6569 3 12C3 10.3431 4.34315 9 6 9"/>
+                                <path d="M15 4V16C15 18.2091 13.2091 20 11 20C8.79086 20 7 18.2091 7 16"/>
+                                <path d="M15 4C15 4 15 7 18 8"/>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
-                <div class="footer-column">
-                    <h4>Community</h4>
-                    <ul>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Reviews</a></li>
-                        <li><a href="#">Refer a Friend</a></li>
-                        <li><a href="#">Loyalty Program</a></li>
-                        <li><a href="#">Discount Program</a></li>
-                        <li><a href="#">Affiliate Program</a></li>
-                        <li><a href="#">Become A Dealer</a></li>
-                    </ul>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="#">WAYFARER</a></li>
+                            <li><a href="#">CGO600 Pro</a></li>
+                            <li><a href="#">CGO800S</a></li>
+                            <li><a href="#">AGO X</a></li>
+                            <li><a href="#">Accessories</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Community</h4>
+                        <ul>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Reviews</a></li>
+                            <li><a href="#">Refer a Friend</a></li>
+                            <li><a href="#">Loyalty Program</a></li>
+                            <li><a href="#">Become a Dealer</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Service</h4>
+                        <ul>
+                            <li><a href="#">Customer Support</a></li>
+                            <li><a href="#">Find a Store</a></li>
+                            <li><a href="#">Financing</a></li>
+                            <li><a href="#">Shipping</a></li>
+                            <li><a href="#">Warranty</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Sustainability</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Press</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="footer-column">
-                    <h4>Service</h4>
-                    <ul>
-                        <li><a href="#">Customer Support</a></li>
-                        <li><a href="#">Find a Store</a></li>
-                        <li><a href="#">Affirm Financing</a></li>
-                        <li><a href="#">Shipping Policy</a></li>
-                        <li><a href="#">Return Policy</a></li>
-                        <li><a href="#">Warranty Policy</a></li>
-                        <li><a href="#">Assembly Service</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Sustainability</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column footer-brand">
-                    <img src="https://via.placeholder.com/200x134?text=Energized+Urban+Ride" alt="Energized Urban Ride" class="footer-badge">
-                </div>
-            </div>
-            <div class="footer-social">
-                <a href="#" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M18 9C18 4.02943 13.9706 0 9 0C4.02943 0 0 4.02943 0 9C0 13.4921 3.29115 17.2155 7.59375 17.8907V11.6016H5.30859V9H7.59375V7.01719C7.59375 4.76156 8.93742 3.51563 10.9932 3.51563C11.9776 3.51563 13.0078 3.69141 13.0078 3.69141V5.90625H11.873C10.755 5.90625 10.4062 6.60006 10.4062 7.3125V9H12.9023L12.5033 11.6016H10.4062V17.8907C14.7088 17.2155 18 13.4921 18 9Z" fill="currentColor"/></svg></a>
-                <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 1.62c2.403 0 2.688.01 3.637.052.877.04 1.354.187 1.671.31.42.163.72.358 1.035.673.315.315.51.615.673 1.035.123.317.27.794.31 1.671.042.949.052 1.234.052 3.637s-.01 2.688-.052 3.637c-.04.877-.187 1.354-.31 1.671-.163.42-.358.72-.673 1.035-.315.315-.615.51-1.035.673-.317.123-.794.27-1.671.31-.949.042-1.234.052-3.637.052s-2.688-.01-3.637-.052c-.877-.04-1.354-.187-1.671-.31a2.788 2.788 0 01-1.035-.673 2.788 2.788 0 01-.673-1.035c-.123-.317-.27-.794-.31-1.671-.042-.949-.052-1.234-.052-3.637s.01-2.688.052-3.637c.04-.877.187-1.354.31-1.671.163-.42.358-.72.673-1.035.315-.315.615-.51 1.035-.673.317-.123.794-.27 1.671-.31.949-.042 1.234-.052 3.637-.052M9 0C6.556 0 6.249.01 5.289.054 4.331.098 3.677.25 3.105.472a4.405 4.405 0 00-1.594 1.039A4.405 4.405 0 00.472 3.105C.25 3.677.098 4.331.054 5.289.01 6.249 0 6.556 0 9s.01 2.751.054 3.711c.044.958.196 1.612.418 2.184a4.405 4.405 0 001.039 1.594 4.405 4.405 0 001.594 1.039c.572.222 1.226.374 2.184.418C6.249 17.99 6.556 18 9 18s2.751-.01 3.711-.054c.958-.044 1.612-.196 2.184-.418a4.405 4.405 0 001.594-1.039 4.405 4.405 0 001.039-1.594c.222-.572.374-1.226.418-2.184.044-.96.054-1.267.054-3.711s-.01-2.751-.054-3.711c-.044-.958-.196-1.612-.418-2.184a4.405 4.405 0 00-1.039-1.594A4.405 4.405 0 0014.895.472C14.323.25 13.669.098 12.711.054 11.751.01 11.444 0 9 0z" fill="currentColor"/><path d="M9 4.378a4.622 4.622 0 100 9.244 4.622 4.622 0 000-9.244zM9 12a3 3 0 110-6 3 3 0 010 6z" fill="currentColor"/><circle cx="13.804" cy="4.196" r="1.08" fill="currentColor"/></svg></a>
-                <a href="#" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M17.624 4.745a2.259 2.259 0 00-1.59-1.6C14.628 2.77 9 2.77 9 2.77s-5.628 0-7.034.375a2.259 2.259 0 00-1.59 1.6C0 6.163 0 9.113 0 9.113s0 2.95.376 4.368a2.226 2.226 0 001.59 1.575c1.406.375 7.034.375 7.034.375s5.628 0 7.034-.375a2.226 2.226 0 001.59-1.575C18 12.063 18 9.113 18 9.113s0-2.95-.376-4.368zM7.159 11.778V6.448l4.708 2.665-4.708 2.665z" fill="currentColor"/></svg></a>
-                <a href="#" aria-label="Twitter"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M14.286 0H17.1L11.014 7.65 18 18H12.573l-4.39-5.738L3.166 18H.35l6.517-7.448L0 0h5.57l3.967 5.243L14.286 0zm-.99 16.182h1.59L4.778 1.727H3.072l10.224 14.455z" fill="currentColor"/></svg></a>
-                <a href="#" aria-label="TikTok"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M12.75 0H9.563v12.273c0 1.472-1.17 2.672-2.626 2.672-1.455 0-2.625-1.2-2.625-2.672 0-1.445 1.142-2.618 2.541-2.673V6.545c-3.037.055-5.478 2.564-5.478 5.728C1.375 15.473 3.856 18 6.937 18c3.082 0 5.563-2.527 5.563-5.727V5.945c1.19.873 2.648 1.4 4.125 1.373V4.264C14.297 4.209 12.75 2.291 12.75 0z" fill="currentColor"/></svg></a>
             </div>
         </div>
         <div class="footer-bottom">
             <div class="container">
-                <div class="footer-links">
+                <div class="footer-legal">
                     <a href="#">Privacy Policy</a>
                     <a href="#">Terms of Service</a>
-                    <a href="#">TENWAYS Europe</a>
-                    <a href="#">Do not sell my personal information</a>
+                    <a href="#">Do Not Sell My Info</a>
                 </div>
-                <div class="payment-methods">
-                    <img src="https://via.placeholder.com/38x24?text=Visa" alt="Visa">
-                    <img src="https://via.placeholder.com/38x24?text=MC" alt="Mastercard">
-                    <img src="https://via.placeholder.com/38x24?text=Amex" alt="American Express">
-                    <img src="https://via.placeholder.com/38x24?text=PP" alt="PayPal">
-                    <img src="https://via.placeholder.com/38x24?text=Apple" alt="Apple Pay">
-                    <img src="https://via.placeholder.com/38x24?text=GPay" alt="Google Pay">
-                    <img src="https://via.placeholder.com/38x24?text=Shop" alt="Shop Pay">
-                    <img src="https://via.placeholder.com/38x24?text=Disc" alt="Discover">
-                    <img src="https://via.placeholder.com/38x24?text=DC" alt="Diners Club">
-                    <img src="https://via.placeholder.com/38x24?text=Aff" alt="Affirm">
+                <div class="footer-payment">
+                    <span>Visa</span>
+                    <span>Mastercard</span>
+                    <span>Amex</span>
+                    <span>PayPal</span>
+                    <span>Apple Pay</span>
                 </div>
-                <p class="copyright">© 2026, TENWAYS</p>
+                <p class="footer-copyright">© 2026 TENWAYS. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <!-- Chat Widget -->
     <button class="chat-widget" aria-label="Open chat">
-        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M18 3C9.716 3 3 9.716 3 18C3 21.5 4.2 24.7 6.2 27.2L4 33L10 31C12.3 32.3 15.1 33 18 33C26.284 33 33 26.284 33 18C33 9.716 26.284 3 18 3Z" stroke="white" stroke-width="2" fill="none"/>
-            <path d="M12 16H24M12 20H20" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        <div class="chat-pulse"></div>
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M21 11.5C21 16.75 16.75 21 11.5 21C9.5 21 7.5 20.5 6 19.5L2 21L3.5 17C2.5 15.5 2 13.5 2 11.5C2 6.25 6.25 2 11.5 2C16.75 2 21 6.25 21 11.5Z"/>
+            <path d="M8 10H8.01M12 10H12.01M16 10H16.01" stroke-width="2" stroke-linecap="round"/>
         </svg>
     </button>
 
-    <script src="script.js"></script>
+    <script src="script-v2.js"></script>
 </body>
 </html>
