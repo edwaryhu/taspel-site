@@ -38,32 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ========================================
-    // Cursor Glow Effect
-    // ========================================
-    const cursorGlow = document.querySelector('.cursor-glow');
-    let mouseX = 0, mouseY = 0;
-    let currentX = 0, currentY = 0;
-
-    document.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-    });
-
-    function animateCursor() {
-        const dx = mouseX - currentX;
-        const dy = mouseY - currentY;
-        currentX += dx * 0.1;
-        currentY += dy * 0.1;
-
-        if (cursorGlow) {
-            cursorGlow.style.left = currentX + 'px';
-            cursorGlow.style.top = currentY + 'px';
-        }
-        requestAnimationFrame(animateCursor);
-    }
-    animateCursor();
-
-    // ========================================
     // Stat Counter Animation
     // ========================================
     const stats = document.querySelectorAll('.stat-number');
